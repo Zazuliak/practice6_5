@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обчислення суми двох чисел</title>
+  </head>
+  <body>
+    <h2>Обчислення суми двох чисел</h2>
+
+    <form id="sumForm">
+      <label for="num1">Число 1:</label>
+      <input type="text" id="num1" name="num1" required /><br /><br />
+
+      <label for="num2">Число 2:</label>
+      <input type="text" id="num2" name="num2" required /><br /><br />
+
+      <input type="submit" value="Обчислити суму" />
+    </form>
+
+    <script>
+      document
+        .getElementById("sumForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Зупиняємо стандартну подію відправки форми
+
+          // Отримуємо значення з полів вводу
+          var num1 = parseFloat(document.getElementById("num1").value);
+          var num2 = parseFloat(document.getElementById("num2").value);
+
+          // Перевірка чи введені значення числа
+          if (isNaN(num1) || isNaN(num2)) {
+            alert("Будь ласка, введіть числа.");
+            return;
+          }
+
+          // Обчислення суми
+          var sum = num1 + num2;
+
+          // Виведення результату у діалоговому вікні
+          alert("Сума: " + sum);
+        });
+    </script>
+  </body>
+</html>
